@@ -16,7 +16,7 @@ export function memo<P extends object>(
     const renderComponent = useMemo(() => {
       // 이미 메모제이션 props 있으면(prev) 새로운 props와 얕은 비교
       if (prevPropsRef.current && prevComponentRef.current) {
-        // true라면 (이전 props와 지금의 props가 같다면)
+        // true라면 (ref 객체의 이전 props와 MemorizedComponent의 매개변수로 들어온 지금의 props가 같다면)
         if (equals(prevPropsRef.current, props)) {
           return prevComponentRef.current; // prev 컴포넌트 재사용.
         }
